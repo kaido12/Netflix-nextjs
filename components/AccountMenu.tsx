@@ -1,11 +1,14 @@
 import { signOut } from "next-auth/react";
 import { FC } from "react";
+import useCurrentUser from "../hooks/useCurrentUser";
 
 interface AccountMenuProps {
   visible?: boolean;
 }
 
 const AccountMenu: FC<AccountMenuProps> = ({ visible }) => {
+  const {data} = useCurrentUser();
+  
   if (!visible) {
     return null;
   }
@@ -17,7 +20,7 @@ const AccountMenu: FC<AccountMenuProps> = ({ visible }) => {
             {/* group/item is way to target multiple groups inside a group */}
           <div className="px-3 group/item flex flex-row gap-3 items-center w-full">
             <img className="w-8 rounded-md" src="./images/default-slate.png" alt="" />
-            <p className="text-white text-sm group-hover/item:underline">Username</p>
+            <p className="text-white text-sm group-hover/item:underline">{data?.name}</p>
           </div>
         </div>
         <hr className="bg-gray-600 border-0 h-px my-4" />

@@ -2,6 +2,8 @@ import { FC } from "react";
 import {FaPlay} from "react-icons/fa";
 import LikeButton from "./LikeButton";
 import {useRouter} from "next/router";
+import useInfoModal from "../hooks/useInfoModal";
+import {IoChevronDown} from "react-icons/io5"
 
 interface MovieCardProps {
   data: Record<string, any>;
@@ -10,6 +12,7 @@ interface MovieCardProps {
 const MovieCard: FC<MovieCardProps> = ({ data }) => {
 
   const router = useRouter();
+  const {openModal} = useInfoModal();
 
   return (
     <>
@@ -47,6 +50,7 @@ const MovieCard: FC<MovieCardProps> = ({ data }) => {
                 <p>{data.genre}</p>
               </span>
               <LikeButton movieId={data?.id}/>
+              <IoChevronDown onClick={() => openModal(data?.id)} className="text-white group-hover/item:text-neutral-300"/>
             </div>                      
           </div>
         </div>
