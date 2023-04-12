@@ -24,7 +24,7 @@ const InfoModal: FC<InfoModalProps> = ({ visible, onClose }) => {
     setIsVisible(false);
     setTimeout(() => {
       onClose();
-    }, 300);
+    }, 500);
   }, [onClose]);
 
   return (
