@@ -39,7 +39,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="w-full fixed z-50">
+    <nav className="w-full fixed z-20">
       <div className={`px-4 md:px-16 py-6 flex flex-row items-center transition duration-500 ${showBackground ? 'bg-zinc-700/90' : ''}`}>
         <img src="./images/logo.png" className="h-4 lg:h-7" alt="logo" />
         <div className="flex-row ml-8 gap-7 hidden lg:flex">

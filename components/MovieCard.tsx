@@ -2,7 +2,7 @@ import { FC } from "react";
 import {FaPlay} from "react-icons/fa";
 import LikeButton from "./LikeButton";
 import {useRouter} from "next/router";
-import useInfoModal from "../hooks/useInfoModal";
+import useInfoModalStore from "../hooks/useInfoModalStore";
 import {IoChevronDown} from "react-icons/io5"
 
 interface MovieCardProps {
@@ -12,7 +12,7 @@ interface MovieCardProps {
 const MovieCard: FC<MovieCardProps> = ({ data }) => {
 
   const router = useRouter();
-  const {openModal} = useInfoModal();
+  const {openModal} = useInfoModalStore();
 
   return (
     <>
@@ -36,12 +36,12 @@ const MovieCard: FC<MovieCardProps> = ({ data }) => {
             className="z-10 bg-zinc-800 p-2 lg:p-4 absolute w-full
                           transition shadow-md "
           >
-            <div className="flex flex-row justify-between flex-grow items-center gap-3">
+            <div className="flex flex-row justify-between text-sm flex-grow items-center">
               <span  className="cursor-pointer w-6 h-6 lg:w-10 lg:h-10 bg-white 
                               flex justify-center items-center transition hover:bg-neutral-300 border-2 rounded-full border-solid border-red-500"
                     onClick={() => router.push(`/watch/${data?.id}`)}
               >
-                <FaPlay className="text-black w-2 lg:w-6" />
+                <FaPlay className="text-black w-6 lg:w-4" />
               </span>
               <span className="text-green-400 gap-4 font-semibold">
                 New <span className="text-white">2023</span>
@@ -50,7 +50,10 @@ const MovieCard: FC<MovieCardProps> = ({ data }) => {
                 <p>{data.genre}</p>
               </span>
               <LikeButton movieId={data?.id}/>
-              <IoChevronDown onClick={() => openModal(data?.id)} className="text-white group-hover/item:text-neutral-300"/>
+              <span onClick={() => openModal(data?.id)}>
+                <IoChevronDown  className="text-white group-hover/item:text-neutral-300"/>
+              </span>
+              
             </div>                      
           </div>
         </div>

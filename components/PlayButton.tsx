@@ -20,6 +20,7 @@ const PlayButton: FC<PlayButtonProps> = ({ movieId }) => {
                     transition"
     >
         <FaPlay className="w-4 md:w-7 text-black" />
+        Play
     </button>
     </>
   )

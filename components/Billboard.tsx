@@ -1,17 +1,16 @@
-import React, { useCallback } from "react";
+import { useCallback, FC } from "react";
 import useBillboard from "../hooks/useBillboard";
 import { BsInfoCircle } from "react-icons/bs";
 import PlayButton from "./PlayButton";
-import useInfoModal from "../hooks/useInfoModal";
+import useInfoModalStore from "../hooks/useInfoModalStore";
 
-const Billboard = () => {
-
+const Billboard: FC = () => {
   const { data } = useBillboard();
-  const {openModal} = useInfoModal(); 
+  const { openModal } = useInfoModalStore();
 
   const handleOpenModal = useCallback(() => {
-    openModal(data?.id)
-  },[openModal, data?.id]);
+    openModal(data?.id);
+  }, [openModal, data?.id]);
 
   return (
     <div className="relative h-[56.25vw]">
@@ -32,11 +31,11 @@ const Billboard = () => {
         <div className="flex flex-row items-center mt-3 md:mt-4 gap-3">
           <PlayButton movieId={data?.id} />
           <button
-            onClick={handleOpenModal}
+            onClick={() => handleOpenModal()}
             className="flex flex-row items-center bg-white/30 text-white rounded-md py-1 md:py-2 px-2 md:px-4 text-sm lg:text-lg w-auto font-semibold hover:bg-opacity-20
               transition "
-          >  
-            <BsInfoCircle className="mr-1"/>
+          >
+            <BsInfoCircle className="mr-1" />
             More Info
           </button>
         </div>

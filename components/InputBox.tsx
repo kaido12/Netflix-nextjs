@@ -22,12 +22,15 @@ const InputBox: FC<InputBoxProps> = ({
         value={value}
         type={type}
         onChange={onChange}
-        className="block rounded-md p-4 pb-1 w-full focus:ring-0 bg-neutral-600 text-slate-300 text-md focus:outline-none appearance-none peer"
+        className="block rounded-md p-4 pb-1 w-full focus:ring-0 bg-neutral-600 text-slate-300 
+                    text-md focus:outline-none appearance-none peer"
         placeholder=" "
       />
       <label
         htmlFor={id}
-        className="absolute text-md  text-zinc-300 top-2 left-3 duration-150 transform  peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-3 peer-focus:-translate-x-1"
+        className="absolute text-md scale-75 -translate-y-3  text-zinc-300 top-2 left-2 duration-200 transform  
+                  peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 
+                  peer-focus:-translate-y-3"
       >
         {label}
       </label>
