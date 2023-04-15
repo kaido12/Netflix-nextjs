@@ -43,7 +43,7 @@ const InfoModal: FC<InfoModalProps> = ({ visible, onClose }) => {
             <div className="relative h-96">
               <video
                 poster={data?.thumbnailUrl}
-                muted
+                autoPlay
                 loop
                 src={data?.videoUrl}
                 className="w-full brightness-[60%] object-cover h-full"
@@ -52,8 +52,7 @@ const InfoModal: FC<InfoModalProps> = ({ visible, onClose }) => {
                 onClick={handleClose}
                 className="cursor-pointer absolute top-3 right-3 h-10 w-10 rounded-full bg-black/70 flex items-center justify-center"
               >
-                <IoCloseSharp className="text-white);
-                " />
+                <IoCloseSharp className="text-white" />
               </div>
               <div className="absolute bottom-[10%] left-10">
                 <p className="text-white text-3xl md:text-4xl h-full lg:text-5xl font-bold mb-8">{data?.title}</p>

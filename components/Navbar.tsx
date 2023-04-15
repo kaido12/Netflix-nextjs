@@ -68,7 +68,7 @@ const Navbar = () => {
 
           <div onClick={toggleAccountMenu} className="flex flex-row items-center gap-2 cursor-pointer relative">
             <div className="w-6 h-6 lg:w-10 lg:h-10 rounded-md overflow-hidden">
-              <img src="./images/default-slate.png" alt="logo" />
+              <img src="./images/aang.jpg" alt="logo" />
             </div>
             <FiChevronDown className={`text-white transition ${showAccountMenu ? "rotate-180": "rotate-0"}`} />
             <AccountMenu visible={showAccountMenu}/>

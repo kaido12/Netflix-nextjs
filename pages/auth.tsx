@@ -4,8 +4,14 @@ import axios from "axios";
 import { signIn } from "next-auth/react";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub, FaFacebook } from "react-icons/fa";
+import { useRouter } from "next/router";
+
+
+
 
 const Auth = () => {
+
+  const router = useRouter();
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -22,14 +28,14 @@ const Auth = () => {
         email,
         password,
         redirect: false,
-        callbackUrl: "/profiles",
+        callbackUrl: "/" ,
       });
 
-      // router.push("/");
+    router.push("/profiles")  
     } catch (error) {
       console.log(error);
     }
-  }, [email, password]);
+  }, [email, password, router]);
 
   const registerHandler = useCallback(async () => {
     try {

@@ -16,6 +16,7 @@ const Billboard: FC = () => {
     <div className="relative h-[56.25vw]">
       <video
         poster={data?.thumbnailUrl}
+        autoPlay
         muted
         loop
         src={data?.videoUrl}

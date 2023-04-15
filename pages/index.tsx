@@ -33,13 +33,13 @@ const Home = () => {
 
   return(
     <>
+      <InfoModal visible={isOpen} onClose={() => closeModal()} />
       <Navbar />
       <Billboard />
       <div className="pb-20">
         <MovieList title="Trending Now" data={movies} />
         <MovieList title="My List" data={liked} />
       </div>
-      <InfoModal visible={isOpen} onClose={() => closeModal()} />
      
     </>
   

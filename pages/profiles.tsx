@@ -33,7 +33,7 @@ export async function getServerSideProps(context: NextPageContext) {
                         <div onClick={() => router.push("/")}>
                             <div className="group flex-row w-44 mx-auto">
                                 <div className="w-44 h-44 rounded-md flex items-center justify-center border-2 border-transparent group-hover:cursor-pointer group-hover:border-white overflow-hidden">
-                                    <img src="./images/default-slate.png" alt="Profile" />
+                                    <img src="./images/aang.jpg" alt="Profile" />
                                 </div>
                                 <div className="mt-4 text-gray-500 text-xl text-center group-hover:text-white">
                                     {user?.name}
